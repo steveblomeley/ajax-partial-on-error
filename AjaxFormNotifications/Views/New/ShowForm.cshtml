@@ -1,0 +1,28 @@
+﻿@model AjaxFormNotifications.Controllers.Data
+
+<div id="my-target"></div>
+
+@using (
+    Ajax.BeginForm(
+        "SaveForm",
+        new AjaxOptions
+        {
+            HttpMethod = "Post",
+            OnSuccess = "onSuccess",
+            OnFailure = "onFailure",
+            UpdateTargetId = "my-target",
+            InsertionMode = InsertionMode.InsertAfter
+        }))
+{
+    @Html.LabelFor(model => Model.Value)
+    @Html.EditorFor(model => Model.Value)
+
+    <input type="submit" value="Save"/>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jquery");
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/app.js"></script>
+}
