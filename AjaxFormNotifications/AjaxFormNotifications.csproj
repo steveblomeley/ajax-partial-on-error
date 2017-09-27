@@ -208,6 +208,7 @@
     <Content Include="Views\New\ShowForm.cshtml" />
     <Content Include="Views\New\_SuccessNotification.cshtml" />
     <Content Include="Views\New\_ErrorNotification.cshtml" />
+    <Content Include="Views\New\ShowJsonForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

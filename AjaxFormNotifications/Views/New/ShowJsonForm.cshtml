@@ -4,14 +4,12 @@
 
 @using (
     Ajax.BeginForm(
-        "SaveForm",
+        "SaveJsonForm",
         new AjaxOptions
         {
             HttpMethod = "Post",
-            OnSuccess = "onSuccess(data)",
-            OnFailure = "onFailure(data)",
-            UpdateTargetId = "my-target",
-            InsertionMode = InsertionMode.InsertBefore
+            OnSuccess = "onJsonSuccess(data);",
+            OnFailure = "onJsonFailure(xhr);"
         }))
 {
     @Html.LabelFor(model => Model.Value)
